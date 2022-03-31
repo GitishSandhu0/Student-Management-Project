@@ -62,7 +62,7 @@ def payFees():
     d={'adminNo':[adminNo],'paidFees':[amount],'pendingFees':[0]}
     df=pd.DataFrame(d)
     df.to_csv("studentfeesummary.csv", mode='a', index=False, header=False)
-    print('Fees payment haas been registered')
+    print('Fees payment has been registered')
 
 def pendingFees():
     monthlyfee()
@@ -98,6 +98,7 @@ def addStudentAcademicProfile():
     d={'adminNo':[adminNo],'Test 1':[test1],'Test 2':[test2],'Test 3':[test3],'Test 4':[test4],'Test 5':[test5]}
     df=pd.DataFrame(d)
     df.to_csv("studentacademics.csv", mode='a', index=False, header=False)
+    print("Data has been added...")
 
 def editAcademicProfile():
     df=pd.read_csv("studentacademics.csv")
@@ -119,11 +120,11 @@ def mainMenu():
 
     enterAdminNo()
 
-    print("                     ===============================================")
-    print("                             Student Data Management System")
-    print("                     ===============================================")
+    print("                     ╔════════════════════════════════════════════╗")
+    print("                     |          Student Management System         |")
+    print("                     ╚════════════════════════════════════════════╝")
 
-    while n!=7:
+    while n!=6:
         print("""
               1. Show Information of Student
               2. Add a Student
@@ -131,7 +132,6 @@ def mainMenu():
               4. Enter the Fee Management Menu
               5. Enter the Academic Menu
               6. Exit
-              7. Debug
              """)
         
         n=int(input("Enter your choice:"))
@@ -145,17 +145,15 @@ def mainMenu():
             FeeManagementMenu()
         if n==5:
             AcademicMenu()
-        if n==6:
+        elif n==6:
             print("Exiting...")
+            print("Thanks for Checking out Project!!")
             break
-        elif n==7:
-            print('debug')
-            academicGraph()
 
 def FeeManagementMenu():
-    print("                     ===============================================")
-    print("                                   Fee Management Menu")
-    print("                     ===============================================")
+    print("                     ╔════════════════════════════════════════════╗")
+    print("                     |            Fee Management Menu             |")
+    print("                     ╚════════════════════════════════════════════╝")
 
     i=100
     while i!=105:
@@ -181,9 +179,9 @@ def FeeManagementMenu():
             mainMenu()
 
 def AcademicMenu():
-    print("                     ==============================================")
-    print("                                Student's Academics Menu")
-    print("                     ==============================================")
+    print("                     ╔════════════════════════════════════════════╗")
+    print("                     |          Student's Academics Menu          |")
+    print("                     ╚════════════════════════════════════════════╝")
 
     s=200
     while s!=205:
